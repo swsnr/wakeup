@@ -1,7 +1,7 @@
 [project]
 name = "wakeup"
 version = "0.1.0"
-description = "Wakeup things in your network"
+description = "Wake up things in your network"
 readme = "README.md"
 authors = [{ name = "Sebastian Wiesner", email = "sebastian@swsnr.de" }]
 classifiers = [
