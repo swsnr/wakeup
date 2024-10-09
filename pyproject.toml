@@ -15,6 +15,8 @@ classifiers = [
     "Topic :: Desktop Environment :: Gnome",
     "Topic :: Home Automation",
     "Topic :: System :: Networking",
+    # Do not upload to PyPI, we distribute via flatpak
+    "Private :: Do Not Upload",
 ]
 requires-python = ">=3.12"
 dependencies = []
