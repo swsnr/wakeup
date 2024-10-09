@@ -1,0 +1,50 @@
+[project]
+name = "wakeup"
+version = "0.1.0"
+description = "Wakeup things in your network"
+readme = "README.md"
+authors = [{ name = "Sebastian Wiesner", email = "sebastian@swsnr.de" }]
+classifiers = [
+    "Development Status :: 2 - Pre-Alpha",
+    "Programming Language :: Python :: 3",
+    "Environment :: X11 Applications :: GTK",
+    "Environment :: X11 Applications :: Gnome",
+    "Intended Audience :: End Users/Desktop",
+    "License :: OSI Approved :: Mozilla Public License 2.0 (MPL 2.0)",
+    "Operating System :: POSIX :: Linux",
+    "Topic :: Desktop Environment :: Gnome",
+    "Topic :: Home Automation",
+    "Topic :: System :: Networking",
+]
+requires-python = ">=3.12"
+dependencies = []
+
+[project.urls]
+Homepage = "https://github.com/swsnr/wakeup"
+Repository = "https://github.com/swsnr/wakeup.git"
+
+[project.scripts]
+wakeup = "wakeup:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.ruff.lint]
+select = [
+    "E",
+    "F",
+    "B",
+    "I",
+    "N",
+    "D",
+    "ANN",
+    "ASYNC",
+    "LOG",
+    "G",
+    "INT",
+    "PERF",
+    "DOC",
+    "RUF",
+    "TRY",
+]

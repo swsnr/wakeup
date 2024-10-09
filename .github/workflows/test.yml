@@ -1,0 +1,19 @@
+name: Test
+
+on:
+  push:
+    branches: ["python"]
+  pull_request:
+    branches: ["python"]
+
+jobs:
+  build:
+    name: Build & lint
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v3
+      - run: uv python install
+      - run: uv sync
+      # Lint
+      - uses: astral-sh/ruff-action@v1
