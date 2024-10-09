@@ -46,7 +46,7 @@ select = [
     "G",
     "INT",
     "PERF",
-    "DOC",
     "RUF",
     "TRY",
 ]
+ignore = ["D203", "D213"]
