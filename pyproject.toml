@@ -34,19 +34,22 @@ build-backend = "hatchling.build"
 
 [tool.ruff.lint]
 select = [
-    "E",
-    "F",
-    "B",
-    "I",
-    "N",
-    "D",
     "ANN",
     "ASYNC",
-    "LOG",
+    "B",
+    "C4",
+    "D",
+    "E",
+    "F",
     "G",
+    "I",
     "INT",
+    "LOG",
+    "N",
     "PERF",
+    "PIE",
     "RUF",
+    "SIM",
     "TRY",
 ]
 ignore = ["D203", "D213"]
