@@ -13,4 +13,4 @@ def say_hello(name: str) -> None:
 
 def main() -> None:
     """Entry point for wakeup."""
-    say_hello(42)
+    say_hello("wakeup")
