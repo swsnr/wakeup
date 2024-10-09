@@ -6,6 +6,11 @@
 """GNOME application to wake up devices in networks using WakeOnLan."""
 
 
+def say_hello(name: str) -> None:
+    """Test type errors."""
+    print(f"Hello {name}")
+
+
 def main() -> None:
     """Entry point for wakeup."""
-    print("Hello from wakeup!")
+    say_hello(42)
