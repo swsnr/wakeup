@@ -15,5 +15,7 @@ jobs:
       - uses: astral-sh/setup-uv@v3
       - run: uv python install
       - run: uv sync
-      # Lint
       - uses: astral-sh/ruff-action@v1
+      - uses: jakebailey/pyright-action@v2
+        with:
+          pylance-version: latest-release
