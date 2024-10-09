@@ -3,5 +3,9 @@
 # file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
 
+"""GNOME application to wake up devices in networks using WakeOnLan."""
+
+
 def main() -> None:
+    """Entry point for wakeup."""
     print("Hello from wakeup!")
