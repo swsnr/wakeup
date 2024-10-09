@@ -50,3 +50,28 @@ select = [
     "TRY",
 ]
 ignore = ["D203", "D213"]
+
+[tool.pyright]
+strictListInference = true
+strictDictionaryInference = true
+strictSetInference = true
+deprecateTypingAliases = true
+enableTypeIgnoreComments = false
+typeCheckingMode = "strict"
+reportPropertyTypeMismatch = "error"
+reportMissingTypeStubs = "error"
+reportUnusedImport = "error"
+reportUnusedClass = "error"
+reportUnusedFunction = "error"
+reportUnusedVariable = "error"
+reportDuplicateImport = "error"
+reportUntypedNamedTuple = "error"
+reportConstantRedefinition = "error"
+reportDeprecated = "error"
+reportUninitializedInstanceVariable = "error"
+reportMissingParameterType = "error"
+reportMissingTypeArgument = "error"
+reportUnusedExpression = "error"
+reportMatchNotExhaustive = "error"
+reportImplicitOverride = "error"
+reportShadowedImports = "error"
