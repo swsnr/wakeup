@@ -5,12 +5,32 @@
 
 """GNOME application to wake up devices in networks using WakeOnLan."""
 
+import sys
+from typing import override
 
-def say_hello(name: str) -> None:
-    """Test type errors."""
-    print(f"Hello {name}")
+import gi
+
+gi.require_version("Gtk", "4.0")
+
+from gi.repository import GLib, Gtk  # noqa: E402
 
 
-def main() -> None:
+class MyApplication(Gtk.Application):
+    """Dummy application to test building and running pygobject apps."""
+
+    def __init__(self) -> None:
+        """Initialize the application."""
+        super().__init__(application_id="com.example.MyGtkApplication")
+        GLib.set_application_name("My Gtk Application")
+
+    @override
+    def do_activate(self) -> None:
+        """Handle application activation."""
+        window = Gtk.ApplicationWindow(application=self, title="Hello World")
+        window.present()
+
+
+def main() -> int:
     """Entry point for wakeup."""
-    say_hello("wakeup")
+    app = MyApplication()
+    return app.run(sys.argv)

@@ -19,7 +19,7 @@ classifiers = [
     "Private :: Do Not Upload",
 ]
 requires-python = ">=3.12"
-dependencies = []
+dependencies = ["pygobject>=3.50.0"]
 
 [project.urls]
 Homepage = "https://github.com/swsnr/wakeup"
@@ -31,6 +31,9 @@ wakeup = "wakeup:main"
 [build-system]
 requires = ["hatchling"]
 build-backend = "hatchling.build"
+
+[tool.uv]
+dev-dependencies = ["pygobject-stubs>=2.11.0"]
 
 [tool.ruff.lint]
 select = [
@@ -52,29 +55,34 @@ select = [
     "SIM",
     "TRY",
 ]
-ignore = ["D203", "D213"]
+ignore = [
+    "D203",   # D211 instead
+    "D213",   # D212 instead
+    "ANN101", # Deprecated, see https://docs.astral.sh/ruff/rules/missing-type-self/#missing-type-self-ann101
+]
 
 [tool.pyright]
-strictListInference = true
-strictDictionaryInference = true
-strictSetInference = true
 deprecateTypingAliases = true
 enableTypeIgnoreComments = false
-typeCheckingMode = "strict"
-reportPropertyTypeMismatch = "error"
-reportMissingTypeStubs = "error"
-reportUnusedImport = "error"
-reportUnusedClass = "error"
-reportUnusedFunction = "error"
-reportUnusedVariable = "error"
-reportDuplicateImport = "error"
-reportUntypedNamedTuple = "error"
 reportConstantRedefinition = "error"
 reportDeprecated = "error"
-reportUninitializedInstanceVariable = "error"
+reportDuplicateImport = "error"
+reportImplicitOverride = "error"
+reportMatchNotExhaustive = "error"
+reportMissingModuleSource = "none"            # We rely on stubs for PyGObject
 reportMissingParameterType = "error"
 reportMissingTypeArgument = "error"
-reportUnusedExpression = "error"
-reportMatchNotExhaustive = "error"
-reportImplicitOverride = "error"
+reportMissingTypeStubs = "error"
+reportPropertyTypeMismatch = "error"
 reportShadowedImports = "error"
+reportUninitializedInstanceVariable = "error"
+reportUntypedNamedTuple = "error"
+reportUnusedClass = "error"
+reportUnusedExpression = "error"
+reportUnusedFunction = "error"
+reportUnusedImport = "error"
+reportUnusedVariable = "error"
+strictDictionaryInference = true
+strictListInference = true
+strictSetInference = true
+typeCheckingMode = "strict"

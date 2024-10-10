@@ -1,0 +1,48 @@
+version = 1
+requires-python = ">=3.12"
+
+[[package]]
+name = "pycairo"
+version = "1.27.0"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/07/4a/42b26390181a7517718600fa7d98b951da20be982a50cd4afb3d46c2e603/pycairo-1.27.0.tar.gz", hash = "sha256:5cb21e7a00a2afcafea7f14390235be33497a2cce53a98a19389492a60628430", size = 661450 }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/1c/65/7664fe3d9928572b7804c651a99cfd6113338eee7436d5b25401c9382619/pycairo-1.27.0-cp312-cp312-win32.whl", hash = "sha256:e2239b9bb6c05edae5f3be97128e85147a155465e644f4d98ea0ceac7afc04ee", size = 750005 },
+    { url = "https://files.pythonhosted.org/packages/f4/bd/114597b9f79fbdb4eb0a4bf4aa54e70246d87f512a880e66a85c1e2ff407/pycairo-1.27.0-cp312-cp312-win_amd64.whl", hash = "sha256:27cb4d3a80e3b9990af552818515a8e466e0317063a6e61585533f1a86f1b7d5", size = 844100 },
+    { url = "https://files.pythonhosted.org/packages/93/76/35d2feef50584cb00d2b4d2215337b0bc765508f8856735a41bfedcb4699/pycairo-1.27.0-cp313-cp313-win32.whl", hash = "sha256:01505c138a313df2469f812405963532fc2511fb9bca9bdc8e0ab94c55d1ced8", size = 750001 },
+    { url = "https://files.pythonhosted.org/packages/9c/e7/92d6e57deee53229bb8b3f7df6d02c503585be7bdd69cb9e54f34aab089b/pycairo-1.27.0-cp313-cp313-win_amd64.whl", hash = "sha256:b0349d744c068b6644ae23da6ada111c8a8a7e323b56cbce3707cba5bdb474cc", size = 844102 },
+]
+
+[[package]]
+name = "pygobject"
+version = "3.50.0"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "pycairo" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/2b/58/d34e67a79631177e3c08e7d02b5165147f590171f2cae6769502af5f7f7e/pygobject-3.50.0.tar.gz", hash = "sha256:4500ad3dbf331773d8dedf7212544c999a76fc96b63a91b3dcac1e5925a1d103", size = 1080367 }
+
+[[package]]
+name = "pygobject-stubs"
+version = "2.11.0"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/00/94/097808d0e22af77e60da74ee8793e01b6233f0ac7875bc782513a5e01bf2/PyGObject-stubs-2.11.0.tar.gz", hash = "sha256:e1c7e32658213ae711d8afc5ea083a434231b8b588d1de23f50d5705a9c8eefe", size = 757190 }
+
+[[package]]
+name = "wakeup"
+version = "0.1.0"
+source = { editable = "." }
+dependencies = [
+    { name = "pygobject" },
+]
+
+[package.dev-dependencies]
+dev = [
+    { name = "pygobject-stubs" },
+]
+
+[package.metadata]
+requires-dist = [{ name = "pygobject", specifier = ">=3.50.0" }]
+
+[package.metadata.requires-dev]
+dev = [{ name = "pygobject-stubs", specifier = ">=2.11.0" }]
