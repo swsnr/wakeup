@@ -27,4 +27,5 @@ jobs:
       - uses: jakebailey/pyright-action@v2
         with:
           pylance-version: latest-release
+          python-path: .venv/bin/python
       - run: uv build
