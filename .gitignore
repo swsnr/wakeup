@@ -3,3 +3,6 @@
 
 # Ignore compiled Python files
 __pycache__/
+
+# Compiled Gio resources
+*.gresource

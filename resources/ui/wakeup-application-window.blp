@@ -1,0 +1,71 @@
+// Copyright Sebastian Wiesner <sebastian@swsnr.de>
+// This Source Code Form is subject to the terms of the Mozilla Public
+// License, v. 2.0. If a copy of the MPL was not distributed with this
+// file, You can obtain one at http://mozilla.org/MPL/2.0/.
+using Gtk 4.0;
+using Adw 1;
+
+template $WakeUpApplicationWindow: Adw.ApplicationWindow {
+  default-width: 480;
+  default-height: 480;
+  title: _('Wake Up');
+
+  content: Adw.ToolbarView {
+    top-bar-style: raised;
+
+    [top]
+    Adw.HeaderBar {
+      [start]
+      Gtk.Button {
+        action-name: "win.add_device";
+        icon-name: "list-add-symbolic";
+        tooltip-text: C_("tooltip", "Add a new device");
+      }
+
+      [end]
+      MenuButton button_menu {
+        menu-model: main_menu;
+        icon-name: 'open-menu-symbolic';
+        primary: true;
+      }
+    }
+
+    Gtk.ScrolledWindow {
+      Gtk.ListBox devices_list {
+        selection-mode: none;
+        vexpand: true;
+        hexpand: true;
+        margin-start: 6;
+        margin-end: 6;
+        margin-top: 6;
+        margin-bottom: 6;
+
+        styles [
+          "boxed-list-separate"
+        ]
+
+        [placeholder]
+        Adw.StatusPage {
+          // TODO: Show the application logo and a button to add a device
+          title: _('No devices');
+          description: _('Add a new device to wake it up.');
+          vexpand: true;
+        }
+      }
+    }
+  };
+}
+
+menu main_menu {
+  section {
+    item {
+      label: _('_Keyboard Shortcuts');
+      action: 'win.show-help-overlay';
+    }
+
+    item {
+      label: _('_About Wake Up');
+      action: 'app.about';
+    }
+  }
+}
